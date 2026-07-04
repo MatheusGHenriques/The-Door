@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Door</string>
+
+    <!-- Shared buttons -->
+    <string name="btn_concluir">Finish</string>
+    <string name="btn_voltar">Back</string>
+    <string name="btn_proximo">Next</string>
+    <string name="btn_continuar">Continue</string>
+    <string name="btn_confirmar">Confirm</string>
+    <string name="btn_cancelar">Cancel</string>
+    <string name="btn_abrir">Open</string>
+    <string name="btn_fechar">Close</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_salvar">Save</string>
+    <string name="btn_testar">Test</string>
+    <string name="main_section_dashboard">Dashboard</string>
+    <string name="main_status_blocked_completely">Completely blocked</string>
+    <string name="main_opens_progress">%1$d / %2$d launches</string>
+
+    <!-- Onboarding - Welcome -->
+    <string name="onboarding_welcome_subtitle">You define the rules. The Door helps you keep them.</string>
+    <string name="onboarding_welcome_quote">\"Some doors are best left unopened.\"</string>
+    <string name="onboarding_welcome_desc">The Door helps you create barriers against distractions, content, and habits you want to avoid. Unlike many blockers, it is designed to make impulsive changes to your settings more difficult.</string>
+    <string name="onboarding_welcome_notice"><![CDATA[The Door does not collect any data and does not connect to the internet in any way. 100% local, 100% private.\n\nTo learn more, visit the official GitHub page:\ngithub.com/MatheusGHenriques/TheDoor\n\nFor screen blocking to work, set your device language to Portuguese or English.]]></string>
+
+    <!-- Onboarding - Selection -->
+    <string name="onboarding_selection_title">What would you like to control?</string>
+    <string name="onboarding_selection_subtitle">Select at least one category</string>
+    <string name="onboarding_social_title">Social media, streaming, games, and other apps</string>
+    <string name="onboarding_social_desc">Set limits, blocks, or schedules for specific applications</string>
+    <string name="onboarding_adult_title">Adult Content</string>
+    <string name="onboarding_adult_desc">Block access to explicit content on the internet</string>
+    <string name="onboarding_gambling_title">Gambling</string>
+    <string name="onboarding_gambling_desc">Block websites and services related to betting</string>
+
+    <!-- Onboarding - Guide page title -->
+    <string name="onboarding_guide_title">Setup Guide</string>
+    <string name="onboarding_guide_subtitle">Follow these steps to configure protections according to your goals.</string>
+
+    <!-- Guide section headers -->
+    <string name="guide_section_dns">DNS Protection</string>
+    <string name="guide_section_browser">Browser Configuration</string>
+    <string name="guide_section_gambling">Betting Websites</string>
+    <string name="guide_section_limits">App Usage Limits</string>
+
+    <!-- Onboarding Checklist -->
+    <string name="onboarding_badge_required">Required</string>
+    <string name="onboarding_badge_additional">Additional</string>
+
+    <string name="onboarding_dns_filter">Configure Cloudflare Family as DNS</string>
+    <string name="onboarding_dns_filter_desc">Tap DNS > Other DNS > DoH > Cloudflare Family (or CleanBrowsing Family) to block content at the network level.</string>
+
+    <string name="onboarding_vpn_activate">Enable RethinkDNS</string>
+    <string name="onboarding_vpn_activate_desc">Routes all traffic through the DNS filter so domain blocking works across all apps.</string>
+
+    <string name="onboarding_vpn_always">Enable Always-on VPN</string>
+    <string name="onboarding_vpn_always_desc">Cuts internet access if the VPN is disabled, preventing protections from being bypassed.</string>
+
+    <string name="onboarding_new_apps">Block connections from new apps</string>
+    <string name="onboarding_new_apps_desc">Prevents newly installed apps from accessing the internet. Configure it in: RethinkDNS > Firewall > Universal Firewall Rules > Block newly installed apps by default.</string>
+
+    <string name="onboarding_ublock">Browser Content Blocking</string>
+    <string name="onboarding_ublock_desc">Install the uBlock Origin extension (ad blocker) in Firefox, along with the BlockNSFW extension (smart adult content blocker).</string>
+
+    <string name="onboarding_blocknsfw">Configure BlockNSFW</string>
+    <string name="onboarding_blocknsfw_desc">Open the extension settings, enable Strict Mode, enable Cloudflare Family Ping, and set a PIN that you will not remember to protect these settings.</string>
+
+    <string name="onboarding_safe_search">Set a safe search engine</string>
+    <string name="onboarding_safe_search_desc">This step is optional and probably unnecessary if you have already enabled the other protections. Search engines such as Google may display adult content even with Safe Search enabled. It is recommended to block Google and other search engines in the firewall and use only safe.startpage.com. Warning: CleanBrowsing Family blocks Startpage, so both cannot be used together.</string>
+
+    <string name="onboarding_gambling">Block gambling websites</string>
+    <string name="onboarding_gambling_block_desc">Add sites such as bet365, sportingbet, betfair, betano, and stake to the RethinkDNS firewall blocklist. You can do this in: RethinkDNS > Firewall > IP &amp; Port Rules > Domain Rules.</string>
+
+    <string name="onboarding_time_limits">Set daily limits</string>
+    <string name="onboarding_time_limits_desc">Set daily time limits for each social media app, blocking schedules, and the maximum number of times an app can be opened per day. (This will be configured in the next steps.)</string>
+
+    <string name="onboarding_gradual_reduction">Gradual reduction</string>
+    <string name="onboarding_gradual_reduction_desc">Daily usage limits automatically decrease week by week until reaching your goal. We recommend starting from your current average usage time. (This will be configured in the next steps.)</string>
+
+    <string name="onboarding_social_dns">Block social media and other domains</string>
+    <string name="onboarding_social_dns_desc">Completely blocks Instagram, Facebook, TikTok, Reddit, X, and YouTube. To do this, add these domains to the RethinkDNS firewall blocklist. You can do this in: RethinkDNS > Firewall > IP &amp; Port Rules > Domain Rules.</string>
+
+    <string name="onboarding_reminder">If you configured RethinkDNS, remember to permanently block it in the next steps to prevent configuration changes.</string>
+
+    <!-- Onboarding - Final page -->
+    <string name="onboarding_final_title">Guide Complete</string>
+    <string name="onboarding_final_question">Notifications are required to show the remaining usage time for your apps and to display custom blocking messages.</string>
+    <string name="onboarding_final_notif_btn">Allow Notifications</string>
+    <string name="onboarding_notif_allowed">Notifications Allowed</string>
+    <string name="onboarding_final_limits_btn">Configure App Limits</string>
+    <string name="onboarding_final_stat">30+</string>
+    <string name="onboarding_final_stat_text">The Door combines over 30 protection measures that work together to help you regain control of your digital habits.</string>
+
+    <string name="onboarding_final_warning">Make sure you completed all steps. They are necessary to build a robust, secure, and multi-layered protection system.</string>
+
+    <!-- AppLimits -->
+    <string name="app_limits_title">App Blocks and Limits</string>
+    <string name="app_limits_subtitle">Tap an app to configure access restrictions or daily usage limits. It is recommended to completely block access to RethinkDNS.</string>
+    <string name="app_limits_search_hint">Search</string>
+
+    <string name="app_limits_banner_title">Usage Access Permission</string>
+    <string name="app_limits_banner_desc">Grant usage access permission in Settings so we can calculate the average daily usage time of your apps.</string>
+    <string name="app_limits_banner_btn">Open Settings</string>
+
+    <string name="app_limits_status_blocked">Access Blocked</string>
+
+    <!-- App Config Dialog -->
+    <string name="app_config_tab_block">Block</string>
+    <string name="app_config_tab_schedule">Schedules</string>
+    <string name="app_config_tab_limit">Limits</string>
+
+    <string name="app_config_block_label">Completely block access to this app</string>
+    <string name="app_config_block_desc">Block access to the app entirely (it will not be possible to open it) or limit how many times it can be launched per day.</string>
+
+    <string name="app_config_schedule_desc">Block the app during specific time windows on selected days. (Example: Block Instagram from 07:00 to 12:00.)</string>
+
+    <string name="app_config_limit_desc">Set daily usage time limits. Usage resets every day. If the Initial value is greater than the Goal, the limit is automatically reduced week by week until reaching the Goal. If the Initial value is equal to or lower than the Goal, the Goal becomes the fixed daily limit for this app.</string>
+
+    <string name="app_config_schedule_title">Blocked time windows</string>
+    <string name="app_config_schedule_add">Add schedule</string>
+    <string name="app_config_schedule_remove">Remove</string>
+    <string name="app_config_schedule_start">Start</string>
+    <string name="app_config_schedule_end">End</string>
+
+    <string name="app_config_status_scheduled">Scheduled Block Window</string>
+
+    <string name="app_config_time_picker_title">Select time</string>
+
+    <string name="app_config_opens_label">Maximum launches per day</string>
+    <string name="app_config_status_opens">%d launches</string>
+
+    <string name="app_config_limit_per_day">Daily limits (minutes)</string>
+    <string name="app_config_limit_entry_target">Goal</string>
+    <string name="app_config_limit_entry_start">Initial</string>
+
+    <string name="app_config_limit_weekly_avg">Average usage: %d min/day</string>
+    <string name="app_config_limit_start_prefill_hint">The Initial value is automatically filled with your average daily usage.</string>
+
+    <string name="app_config_limit_weeks_to_target">~%d weeks to reach the Goal</string>
+    <string name="app_config_limit_add">Add new limit</string>
+
+    <string name="day_mon">Mon</string>
+    <string name="day_tue">Tue</string>
+    <string name="day_wed">Wed</string>
+    <string name="day_thu">Thu</string>
+    <string name="day_fri">Fri</string>
+    <string name="day_sat">Sat</string>
+    <string name="day_sun">Sun</string>
+
+    <!-- Redirect Config -->
+    <string name="redirect_title">When blocking an app</string>
+    <string name="redirect_subtitle">When an app is blocked, The Door can display a custom message, open another app of your choice, or simply return to the home screen.</string>
+
+    <string name="redirect_tile_door_title">Open The Door</string>
+    <string name="redirect_tile_door_subtitle">Displays a custom message when blocking</string>
+
+    <string name="redirect_phrase_label">Custom message</string>
+    <string name="redirect_phrase_hint">Example: I would like to have more time to read.</string>
+    <string name="redirect_phrase_tip">Tip: Write down the reason why you are setting these restrictions. Seeing it when redirected may help you stay focused.</string>
+
+    <string name="redirect_tile_app_title">Open another app</string>
+    <string name="redirect_tile_app_subtitle">Redirect to a specific app, such as an e-book reader</string>
+
+    <string name="redirect_select_action">Select</string>
+
+    <string name="redirect_tile_none_title">No redirection</string>
+    <string name="redirect_tile_none_subtitle">Simply returns to the home screen</string>
+
+    <string name="redirect_dialog_title">Select app</string>
+    <string name="redirect_dialog_search_hint">Search</string>
+    <string name="redirect_dialog_empty">No apps found</string>
+
+    <string name="redirect_toast_title">Toast</string>
+    <string name="redirect_toast_subtitle">Displays a temporary message on the screen</string>
+    <string name="redirect_toast_label">Toast message</string>
+    <string name="redirect_toast_hint">Example: App blocked</string>
+
+    <!-- Protection Config -->
+    <string name="protection_title">The Door Protections</string>
+    <string name="protection_subtitle">Select which protections of The Door should remain active. Warning! If all protections are enabled, the only possible ways to remove The Door may be a third-party PIN (may be configured in the next steps), USB commands, or an Android Factory Reset. All protections, usage limits, and restrictions are only enforced after completing the app setup.</string>
+
+    <string name="protection_section_additional">Additional</string>
+    <string name="protection_section_recommended">Recommended</string>
+
+    <string name="protection_item_accessibility">Accessibility</string>
+    <string name="protection_item_accessibility_desc">Blocks changes to accessibility permissions, which are essential for the application\'s operation.</string>
+
+    <string name="protection_item_developer_options">Developer Options</string>
+    <string name="protection_item_developer_options_desc">Keeps Developer Options locked, preventing them from being used to disable the app.</string>
+
+    <string name="protection_item_uninstall_door">The Door Uninstallation</string>
+    <string name="protection_item_uninstall_door_desc">Protects The Door against uninstallation.</string>
+
+    <string name="protection_item_app_info">App Information</string>
+    <string name="protection_item_app_info_desc">Blocks the App Info screen for all applications, preventing app uninstallation, force stop, data clearing, and disabling device administrator permissions.</string>
+
+    <string name="protection_item_language">Language</string>
+    <string name="protection_item_language_desc">Prevents changes to the system language, which could be used to bypass The Door protections.</string>
+
+    <string name="protection_item_power_menu">Safe Mode</string>
+    <string name="protection_item_power_menu_desc">Disables rebooting into Safe Mode, which could allow The Door to be uninstalled. Safe Mode is an Android feature that may still be useful in specific situations.</string>
+
+    <string name="protection_item_vpn">VPN Settings</string>
+    <string name="protection_item_vpn_desc">Keeps VPN settings locked, preventing network-level protections from being bypassed.</string>
+
+    <string name="protection_item_private_dns">Private DNS</string>
+    <string name="protection_item_private_dns_desc">Prevents changes to Private DNS settings, avoiding domain-blocking bypasses.</string>
+
+    <string name="protection_item_uninstall_firefox">Firefox Uninstallation</string>
+    <string name="protection_item_uninstall_firefox_desc">Protects Firefox against uninstallation, preventing extensions from being disabled.</string>
+
+    <string name="protection_item_uninstall_rethink">RethinkDNS Uninstallation</string>
+    <string name="protection_item_uninstall_rethink_desc">Protects RethinkDNS against uninstallation, preventing network-level protections from being disabled.</string>
+
+    <string name="protection_item_firefox_settings">Firefox: Extensions and Settings</string>
+    <string name="protection_item_firefox_settings_desc">Blocks changes to Firefox extensions and settings.</string>
+
+    <string name="protection_item_firefox_ublock">Firefox: uBlock Origin</string>
+    <string name="protection_item_firefox_ublock_desc">Prevents removal of the uBlock Origin extension, which blocks ads and trackers.</string>
+
+    <string name="protection_item_firefox_blocknsfw">Firefox: BlockNSFW</string>
+    <string name="protection_item_firefox_blocknsfw_desc">Prevents removal of the BlockNSFW extension, which intelligently blocks explicit content.</string>
+
+    <!-- Checklist -->
+    <string name="checklist_title">Final Checklist</string>
+    <string name="checklist_subtitle">Confirm that at least The Door Engine, the Accessibility Service, is active. It is essential for the app to function. Some of the other items listed below may not need to be enabled or used.</string>
+
+    <string name="checklist_section_permissions">The Door Permissions</string>
+
+    <string name="checklist_item_accessibility">The Door Engine</string>
+    <string name="checklist_item_accessibility_desc">When attempting to enable the accessibility service, access may be denied. You will need to open the app information page (Device Settings > Apps > The Door), tap the three-dot menu in the upper-right corner, and select "Allow Restricted Settings". Then return to the Accessibility page and enable The Door Engine.</string>
+
+    <string name="checklist_item_admin">The Door Seal</string>
+    <string name="checklist_item_admin_desc">Sets The Door as a Device Administrator. This helps prevent forced uninstallation, app data removal, and reduces the chances of the service being terminated by Android. It does not grant any additional permissions. To enable it, go to: Device Settings > Security &amp; Privacy > More Security Settings > Device Admin Apps, and enable The Door Seal.</string>
+
+    <string name="checklist_item_notifications">Notifications</string>
+    <string name="checklist_item_notifications_desc">Allows the app to notify you about remaining time for daily usage limits and display custom blocking messages.</string>
+
+    <string name="checklist_section_system">System</string>
+
+    <string name="checklist_item_usb_debug">Disable USB Debugging</string>
+    <string name="checklist_item_usb_debug_desc">For advanced users only. Prevents external commands from being executed through USB. It is also recommended to disable Wireless Debugging and enable Auto Blocker (Device Settings > Security &amp; Privacy).</string>
+
+    <string name="checklist_item_ext_install">Disable Unknown App Installation</string>
+    <string name="checklist_item_ext_install_desc">Prevents The Door or its settings from being overwritten by other applications and blocks installation of apps that could bypass protections.</string>
+
+    <string name="checklist_section_browser">Browsers and Extensions</string>
+
+    <string name="checklist_item_chrome">Remove Chrome</string>
+    <string name="checklist_item_chrome_desc">Remove or disable other browsers (such as Chrome and Samsung Internet) that may bypass restrictions, leaving Firefox as the only installed browser.</string>
+
+    <string name="checklist_item_firefox">Install Firefox</string>
+    <string name="checklist_item_firefox_desc">The preferred browser due to compatibility with extensions that form part of the protection system.</string>
+
+    <string name="checklist_item_ublock">Install uBlock Origin</string>
+    <string name="checklist_item_ublock_desc">Ad-blocking extension available from the official Firefox Add-ons store.</string>
+
+    <string name="checklist_item_blocknsfw">Install BlockNSFW</string>
+    <string name="checklist_item_blocknsfw_desc">Smart adult-content blocking extension available from the official Firefox Add-ons store. It should be configured with Strict Mode + Cloudflare Family Ping + a random PIN.</string>
+
+    <string name="checklist_section_dns_adult">DNS Protections</string>
+
+    <string name="checklist_item_search_blocks">Block Search Domains</string>
+    <string name="checklist_item_search_blocks_desc">Block domains in RethinkDNS such as google.com, startpage.com, bing.com, etc.</string>
+
+    <string name="checklist_item_safe_default">Use Safe Startpage</string>
+    <string name="checklist_item_safe_default_desc">Use safe.startpage.com as the only allowed search engine.</string>
+
+    <string name="checklist_section_rethink">RethinkDNS</string>
+
+    <string name="checklist_item_rethink_installed">Install RethinkDNS</string>
+    <string name="checklist_item_rethink_installed_desc">Core application for network-level content control.</string>
+
+    <string name="checklist_item_rethink_configured">Configure RethinkDNS</string>
+    <string name="checklist_item_rethink_configured_desc">Configure Cloudflare Family DoH (or CleanBrowsing Family, which is more aggressive and incompatible with Startpage) and configure the firewall.</string>
+
+    <string name="checklist_section_social">Social Media and Other Apps</string>
+
+    <string name="checklist_item_time_limits">Set Time Limits</string>
+    <string name="checklist_item_time_limits_desc">Configure maximum daily usage limits, blocking schedules, and how many times an app may be opened.</string>
+
+    <string name="checklist_item_social_dns">Block Domains in DNS</string>
+    <string name="checklist_item_social_dns_desc">Add gambling, social media, or other domains to the RethinkDNS firewall. These websites and services will no longer be accessible.</string>
+
+    <string name="checklist_btn_finalizar">Finish</string>
+    <string name="checklist_icon_done">Done</string>
+
+    <string name="btn_instalar">Install</string>
+    <!-- Lock Choice -->
+    <string name="lock_choice_title">Protect Settings</string>
+    <string name="lock_choice_subtitle">Choose how you want to protect The Door settings. Depending on the protections you previously selected, the only methods that may allow disabling the application will be the third-party PIN (defined below) or an Android Factory Reset (which erases all data on the device). Always keep a backup of your device.</string>
+
+    <string name="lock_choice_pin_title">Third-Party PIN Protected Setup</string>
+    <string name="lock_choice_pin_subtitle">A trusted friend or family member sets a 6-digit PIN that you should never know. This PIN will be required to access The Door settings.</string>
+
+    <string name="lock_choice_zero_title">Zero Trust Model</string>
+    <string name="lock_choice_zero_subtitle">Once configured, the application\'s settings can no longer be modified. Warning! Depending on how you configured The Door, reversing any decision may require an Android Factory Reset.</string>
+
+    <!-- PIN Setup -->
+    <string name="pin_title">Set Third-Party PIN</string>
+    <string name="pin_desc">Hand the phone to another trusted person. They will set a 6-digit PIN that you will not know.</string>
+
+    <string name="pin_input_label">Enter PIN (6 digits)</string>
+    <string name="pin_confirm_label">Confirm PIN (6 digits)</string>
+
+    <string name="pin_error_digits">The PIN must contain exactly 6 digits.</string>
+    <string name="pin_error_mismatch">The entered PINs do not match.</string>
+
+    <string name="pin_keep_current">Keep current PIN</string>
+
+    <!-- Zero Trust -->
+    <string name="zero_trust_title">Zero Trust Model</string>
+
+    <string name="zero_trust_warning1_title">What does this mean?</string>
+    <string name="zero_trust_warning1_text">You will not be able to change The Door settings, usage limits, restrictions, and related configurations. The settings button will be removed.</string>
+
+    <string name="zero_trust_warning2_title">How can I remove The Door or its protections?</string>
+    <string name="zero_trust_warning2_text">Once activated, the only way to bypass The Door protections may be an Android Factory Reset, which will erase all data on your device. Remember to back up your data.</string>
+
+    <string name="zero_trust_warning3_title">What if I haven\'t configured everything?</string>
+    <string name="zero_trust_warning3_text">Missing protections may leave ways to bypass restrictions, limits, and blocks. Confirm everything is configured as intended before finalizing and activating The Door.</string>
+
+    <string name="zero_trust_checkbox">I understand that reversing this action may require an Android Factory Reset, which will erase all my data.</string>
+
+    <string name="zero_trust_btn_activate">Activate</string>
+
+    <!-- Main Screen -->
+    <string name="main_zero_trust_title">Zero Trust Mode Active.</string>
+    <string name="main_zero_trust_body">Settings cannot be modified through the application. Reversal may require an Android Factory Reset.</string>
+
+    <string name="main_btn_settings">Settings</string>
+
+    <string name="main_time_saved_title">Time Recovered</string>
+    <string name="main_time_saved_today">Today: %s</string>
+    <string name="main_time_saved_week">This week: %s</string>
+    <string name="main_time_saved_alltime">Since installation: %s</string>
+
+    <!-- PIN Dialog (MainActivity) -->
+    <string name="pin_dialog_title">Enter PIN</string>
+    <string name="pin_dialog_subtitle">Enter the 6-digit third-party PIN defined during setup.</string>
+
+    <string name="pin_dialog_label">PIN</string>
+
+    <string name="pin_dialog_error">Incorrect PIN. Please try again.</string>
+
+    <string name="pin_dialog_btn_unlock">Unlock</string>
+    <string name="pin_dialog_btn_cancel">Cancel</string>
+
+    <!-- Limit warning notifications -->
+    <string name="limit_warning_title">The Door - %s</string>
+
+    <string name="limit_warning_15min">Less than 15 minutes remaining for %s</string>
+    <string name="limit_warning_5min">Less than 5 minutes remaining for %s</string>
+    <string name="limit_warning_1min">Less than 1 minute remaining for %s</string>
+
+    <!-- Admin Receiver -->
+    <string name="admin_sealed_toast">The Door: Sealed</string>
+
+    <string name="admin_disable_warning">Disabling The Door Seal will weaken system-level protection.</string>
+
+    <string name="admin_unsealed_toast">The Door: Unsealed</string>
+
+</resources>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Door</string>
+    <!-- Shared buttons -->
+    <string name="btn_concluir">Concluir</string>
+    <string name="btn_voltar">Voltar</string>
+    <string name="btn_proximo">Próximo</string>
+    <string name="btn_continuar">Continuar</string>
+    <string name="btn_confirmar">Confirmar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_abrir">Abrir</string>
+    <string name="btn_fechar">Fechar</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_salvar">Salvar</string>
+    <string name="btn_testar">Testar</string>
+    <string name="main_section_dashboard">Painel</string>
+    <string name="main_status_blocked_completely">Bloqueado completamente</string>
+    <string name="main_opens_progress">%1$d / %2$d aberturas</string>
+
+    <!-- Onboarding - Welcome -->
+    <string name="onboarding_welcome_subtitle">Você define as regras. O The Door ajuda a mantê-las.</string>
+    <string name="onboarding_welcome_quote">\"Há portas que é melhor não abrir.\"</string>
+    <string name="onboarding_welcome_desc">O The Door ajuda você a criar barreiras contra distrações, conteúdos e hábitos que deseja evitar. Diferentemente de muitos bloqueadores, ele foi projetado para dificultar alterações impulsivas nas suas configurações.</string>
+    <string name="onboarding_welcome_notice"><![CDATA[O The Door não coleta nenhum tipo de dados, e não faz nenhum tipo de conexão com a internet. 100% local, 100% privado.\n\nPara saber mais, entre na página oficial no GitHub:\ngithub.com/MatheusGHenriques/TheDoor\n\nPara o bloqueio de telas funcionar, configure o idioma do dispositivo para Português ou Inglês.]]></string>
+
+    <!-- Onboarding - Selection -->
+    <string name="onboarding_selection_title">O que você gostaria de controlar?</string>
+    <string name="onboarding_selection_subtitle">Selecione ao menos uma categoria</string>
+    <string name="onboarding_social_title">Redes sociais, streaming, jogos e outros apps</string>
+    <string name="onboarding_social_desc">Defina limites, bloqueios ou horários para aplicativos específicos</string>
+    <string name="onboarding_adult_title">Conteúdo Adulto</string>
+    <string name="onboarding_adult_desc">Bloqueie acesso a conteúdo explícito na internet</string>
+    <string name="onboarding_gambling_title">Jogos de Azar</string>
+    <string name="onboarding_gambling_desc">Bloqueie sites e serviços relacionados a apostas</string>
+
+    <!-- Onboarding - Guide page title -->
+    <string name="onboarding_guide_title">Guia de Configuração</string>
+    <string name="onboarding_guide_subtitle">Siga estes passos para configurar as proteções de acordo com seus objetivos.</string>
+
+    <!-- Guide section headers -->
+    <string name="guide_section_dns">Proteção DNS</string>
+    <string name="guide_section_browser">Configuração do Navegador</string>
+    <string name="guide_section_gambling">Sites de Apostas</string>
+    <string name="guide_section_limits">Limites de uso de Apps</string>
+
+    <!-- Onboarding Checklist -->
+    <string name="onboarding_badge_required">Obrigatório</string>
+    <string name="onboarding_badge_additional">Adicional</string>
+    <string name="onboarding_dns_filter">Configurar Cloudflare Family como DNS</string>
+    <string name="onboarding_dns_filter_desc">Clique em DNS > Outros DNS > DoH > Cloudflare Family (ou CleanBrowsingFamily) para bloquear em nível de rede.</string>
+    <string name="onboarding_vpn_activate">Ativar o RethinkDNS</string>
+    <string name="onboarding_vpn_activate_desc">Direciona todo o tráfego pelo filtro DNS para que o bloqueio de domínios funcione em todos os apps</string>
+    <string name="onboarding_vpn_always">Ativar VPN sempre ativa</string>
+    <string name="onboarding_vpn_always_desc">Corta o acesso à internet se a VPN for desligada, impedindo que a proteção seja contornada.</string>
+    <string name="onboarding_new_apps">Bloquear conexões de novos apps</string>
+    <string name="onboarding_new_apps_desc">Impede que novos recém instalados tenham acesso à internet. Pode ser configurado em: RethinkDNS > Firewall > Regras de firewall universal > Bloquear aplicativos recém instalados por padrão.</string>
+
+    <string name="onboarding_ublock">Bloqueio de Conteúdo no Navegador</string>
+    <string name="onboarding_ublock_desc">Instale a extensão uBlock Origin (bloqueador de anúncios) no Firefox, assim como a extensão BlockNSFW (bloqueio de conteúdo adulto inteligente).</string>
+    <string name="onboarding_blocknsfw">Configurar o BlockNSFW</string>
+    <string name="onboarding_blocknsfw_desc">Entre nas configurações da extensão, ative o Modo Estrito, habilite Ping Cloudflare Family, e defina um PIN que você não irá lembrar para proteger essas configurações.</string>
+    <string name="onboarding_safe_search">Definir buscador seguro</string>
+    <string name="onboarding_safe_search_desc">Este passo é opcional, e provavelmente desnecessário se você já ativou as outras proteçôes. Buscadores como o Google podem exibir conteúdo adulto mesmo com o Safe Search ativo. Recomenda-se bloquear o Google e outros buscadores no firewall e usar apenas o safe.startpage.com. Atenção! O CleanBrowsing Family bloqueia o Startpage, logo não é possível utilizar ambos em conjunto.</string>
+
+    <string name="onboarding_gambling">Bloquear sites de apostas</string>
+    <string name="onboarding_gambling_block_desc">Adicione sites como bet365, sportingbet, betfair, betano e stake à lista de bloqueio do firewall do RethinkDNS. Você pode fazer isso em: RethinkDNS > Firewall > Regras de IP e porta > Regras de domínio.</string>
+
+    <string name="onboarding_time_limits">Definir limites diários</string>
+    <string name="onboarding_time_limits_desc">Defina o limite de tempo por dia para cada rede social, janelas de tempo de bloqueio e número máximo de vezes que um app pode ser aberto em um dia. (Será configurado nos próximos passos)</string>
+    <string name="onboarding_gradual_reduction">Redução gradual</string>
+    <string name="onboarding_gradual_reduction_desc">Os limites de uso diário diminuem automaticamente semana a semana até atingir sua meta. Sugerimos começar pelo seu tempo de uso médio atual. (Será configurado nos próximos passos)</string>
+
+    <string name="onboarding_social_dns">Bloquear domínios de redes sociais e outros</string>
+    <string name="onboarding_social_dns_desc">Bloqueia Instagram, Facebook, TikTok, Reddit, X e YouTube completamente. Para fazer isso, adicione esses sites à lista de bloqueio do firewall do RethinkDNS. Você pode fazer isso em: RethinkDNS > Firewall > Regras de IP e porta > Regras de domínio.</string>
+
+    <string name="onboarding_reminder">Se você configurou o RethinkDNS, lembre-se de bloqueá-lo permanentemente nos próximos passos, para impossibilitar mudanças em sua configuração.</string>
+
+    <!-- Onboarding - Final page -->
+    <string name="onboarding_final_title">Preparação Completa</string>
+    <string name="onboarding_final_question">As notificações são necessárias para avisar quanto tempo de uso ainda resta para seus apps e para mostrar frases customizadas de bloqueio.</string>
+    <string name="onboarding_final_notif_btn">Permitir Notificações</string>
+    <string name="onboarding_notif_allowed">Notificações Permitidas</string>
+    <string name="onboarding_final_limits_btn">Configurar Limites dos Apps</string>
+    <string name="onboarding_final_warning">Verifique se você concluiu todos os passos. Eles são necessários para termos algo robusto, seguro e que atua em múltiplas camadas.</string>
+    <string name="onboarding_final_stat">30+</string>
+    <string name="onboarding_final_stat_text">O The Door combina mais de 30 medidas de proteção que trabalham juntas para ajudar você a retomar o controle dos seus hábitos digitais.</string>
+
+    <!-- AppLimits -->
+    <string name="app_limits_title">Bloqueios e Limites de Apps</string>
+    <string name="app_limits_subtitle">Toque em um app para configurar bloqueios de acesso ou limites de uso diário. É recomendado bloquear completamente o acesso o RethinkDNS.</string>
+    <string name="app_limits_search_hint">Buscar</string>
+    <string name="app_limits_banner_title">Acesso aos Dados de Uso</string>
+    <string name="app_limits_banner_desc">Conceda acesso aos dados de uso nas Configurações para que possamos calcular o tempo de uso médio diário de seus apps.</string>
+    <string name="app_limits_banner_btn">Abrir Configurações</string>
+    <string name="app_limits_status_blocked">Acesso Bloqueado</string>
+
+    <!-- App Config Dialog -->
+    <string name="app_config_tab_block">Bloquear</string>
+    <string name="app_config_tab_schedule">Janelas de uso</string>
+    <string name="app_config_tab_limit">Limites</string>
+    <string name="app_config_block_label">Bloquear acesso a este app completamente</string>
+    <string name="app_config_block_desc">Bloqueie o acesso ao app completamente (não será possível abri-lo) ou limite o número de vezes que ele poderá ser aberto diariamente.</string>
+    <string name="app_config_schedule_desc">Bloqueie o app durante janelas de horários específicos em dias selecionados. (Ex: Bloquear acesso ao Instagram de 07:00 às 12:00)</string>
+    <string name="app_config_limit_desc">Defina limites diários de tempo de uso. O uso é resetado a cada dia. Se o valor Inicial for menor que a Meta, o limite é reduzido automaticamente de semana a semana, até atingir a Meta. Caso o limite Inicial seja igual ou menor que a Meta, a Meta será o limite de uso diário fixo deste app.</string>
+    <string name="app_config_schedule_title">Janelas de horários bloqueados</string>
+    <string name="app_config_schedule_add">Adicionar janela</string>
+    <string name="app_config_schedule_remove">Remover</string>
+    <string name="app_config_schedule_start">Início</string>
+    <string name="app_config_schedule_end">Fim</string>
+    <string name="app_config_status_scheduled">Janela de Horários de Bloqueio</string>
+    <string name="app_config_time_picker_title">Selecionar horário</string>
+    <string name="app_config_opens_label">Máximo de acessos por dia</string>
+    <string name="app_config_status_opens">%d acessos</string>
+    <string name="app_config_limit_per_day">Limites diários (em minutos)</string>
+    <string name="app_config_limit_entry_target">Meta</string>
+    <string name="app_config_limit_entry_start">Início</string>
+    <string name="app_config_limit_weekly_avg">Média de uso: %d min/dia</string>
+    <string name="app_config_limit_start_prefill_hint">O valor Inicial já é preenchido com sua média de uso diária</string>
+    <string name="app_config_limit_weeks_to_target">~%d semanas para atingir a Meta</string>
+    <string name="app_config_limit_add">Adicionar novo limite</string>
+    <string name="day_mon">Seg</string>
+    <string name="day_tue">Ter</string>
+    <string name="day_wed">Qua</string>
+    <string name="day_thu">Qui</string>
+    <string name="day_fri">Sex</string>
+    <string name="day_sat">Sáb</string>
+    <string name="day_sun">Dom</string>
+
+    <!-- Redirect Config -->
+    <string name="redirect_title">Ao bloquear um app</string>
+    <string name="redirect_subtitle">Ao bloquear um app, o The Door pode exibir uma mensagem personalizada, abrir um outro app de sua escolha, ou apenas sair para a tela inicial.</string>
+    <string name="redirect_tile_door_title">Abrir o The Door</string>
+    <string name="redirect_tile_door_subtitle">Exibe uma frase personalizada ao bloquear</string>
+    <string name="redirect_phrase_label">Mensagem personalizada</string>
+    <string name="redirect_phrase_hint">Ex: Gostaria de ter mais tempo para ler.</string>
+    <string name="redirect_phrase_tip">Dica: Escreva o motivo pelo qual você está definindo esses bloqueios. Ver isso ao ser redirecionado pode te ajudar a manter o foco.</string>
+    <string name="redirect_tile_app_title">Abrir outro app</string>
+    <string name="redirect_tile_app_subtitle">Redirecionar para um app específico, como um E-book Reader</string>
+    <string name="redirect_select_action">Selecionar</string>
+    <string name="redirect_tile_none_title">Sem redirecionamento</string>
+    <string name="redirect_tile_none_subtitle">Apenas volta para a tela inicial</string>
+    <string name="redirect_dialog_title">Selecionar app</string>
+    <string name="redirect_dialog_search_hint">Buscar</string>
+    <string name="redirect_dialog_empty">Nenhum app encontrado</string>
+    <string name="redirect_toast_title">Toast</string>
+    <string name="redirect_toast_subtitle">Exibe uma mensagem temporária na tela</string>
+    <string name="redirect_toast_label">Mensagem do Toast</string>
+    <string name="redirect_toast_hint">Ex: App bloqueado</string>
+
+    <!-- Protection Config -->
+    <string name="protection_title">Proteções do The Door</string>
+    <string name="protection_subtitle">Selecione quais proteções do The Door devem permanecer ativas. Atenção! Se todas forem ativadas, os únicos meios de remover o The Door serão, possivelmente, o PIN de terceiros (que poderá ser configurado nos próximos passos), comandos via USB, ou uma Restauração para Configurações de Fábrica. Todas as proteções, limites de uso, e outros só são colocados em prática ao terminar a configuração do aplicativo.</string>
+    <string name="protection_section_additional">Adicionais</string>
+    <string name="protection_section_recommended">Recomendadas</string>
+    <string name="protection_item_accessibility">Acessibilidade</string>
+    <string name="protection_item_accessibility_desc">Bloqueia alterações nas permissões de acessibilidade, vitais para o funcionamento do aplicativo.</string>
+    <string name="protection_item_developer_options">Opções do desenvolvedor</string>
+    <string name="protection_item_developer_options_desc">Mantém as opções do desenvolvedor bloqueadas, que podem ser usadas para desativar o app.</string>
+    <string name="protection_item_uninstall_door">Desinstalação do The Door</string>
+    <string name="protection_item_uninstall_door_desc">Protege o The Door contra desinstalação.</string>
+    <string name="protection_item_app_info">Informações do app</string>
+    <string name="protection_item_app_info_desc">Bloqueia a tela de informações de todos aplicativos, impedindo desinstalação, finalização do serviço do app, limpeza de dados do app e a desativação da administração do dispositivo.</string>
+    <string name="protection_item_language">Idioma</string>
+    <string name="protection_item_language_desc">Previne alterações de idioma no sistema, que podem permitir burlar as proteções do The Door.</string>
+    <string name="protection_item_power_menu">Modo de segurança</string>
+    <string name="protection_item_power_menu_desc">Desativa o reinício em modo de segurança, que permite a desinstalação do The Door. O modo de segurança é uma funcionalidade do Android que pode ser útil em casos específicos.</string>
+    <string name="protection_item_vpn">Configurações de VPN</string>
+    <string name="protection_item_vpn_desc">Mantém as configurações de VPN bloqueadas, impedindo burlar proteçöes em nível de rede.</string>
+    <string name="protection_item_private_dns">DNS privado</string>
+    <string name="protection_item_private_dns_desc">Previne alterações de DNS privado, impedindo contornar bloqueios de domínios.</string>
+    <string name="protection_item_uninstall_firefox">Desinstalação do Firefox</string>
+    <string name="protection_item_uninstall_firefox_desc">Protege o Firefox contra desinstalação, impedindo a desativação das extensões.</string>
+    <string name="protection_item_uninstall_rethink">Desinstalação do RethinkDNS</string>
+    <string name="protection_item_uninstall_rethink_desc">Protege o RethinkDNS contra desinstalação, impedindo a desativação de proteções em nível de rede.</string>
+    <string name="protection_item_firefox_settings">Firefox: extensões e configurações</string>
+    <string name="protection_item_firefox_settings_desc">Bloqueia alterar extensões e configurações do Firefox.</string>
+    <string name="protection_item_firefox_ublock">Firefox: uBlock Origin</string>
+    <string name="protection_item_firefox_ublock_desc">Impede a remoção da extensão uBlock Origin, que bloqueia anúncios e rastreadores.</string>
+    <string name="protection_item_firefox_blocknsfw">Firefox: BlockNSFW</string>
+    <string name="protection_item_firefox_blocknsfw_desc">Impede a remoção da extensão BlockNSFW, que bloqueia conteúdo explícito de forma inteligente.</string>
+
+    <!-- Checklist -->
+    <string name="checklist_title">Checklist Final</string>
+    <string name="checklist_subtitle">Confirme que ao menos o The Door Engine, o serviço de Acessibilidade, está ativo. Ele é essencial para o funcionamento do app. Alguns dos outros itens listados abaixo poddem não ser necessários de serem ativados ou utilizados.</string>
+    <string name="checklist_section_permissions">Permissões do The Door</string>
+    <string name="checklist_item_accessibility">The Door Engine</string>
+    <string name="checklist_item_accessibility_desc">Ao tentar ativar o serviço de acessibilidade, o app terá seu acesso negado. Será necessário abrir as informações do aplicativo (Configurações do Dispositivo > Aplicativos > The Door), e clicar nos 3 pontinhos no canto superior direito, e em seguida no texto "Permitir Configurações Restritas". Depois disso, volte par a página de Acessibilidade e ative o serviço The Door Engine.</string>
+    <string name="checklist_item_admin">The Door Seal</string>
+    <string name="checklist_item_admin_desc">Define o The Door como Administrador do Dispositivo. Isso impede que o usuário force a desinstalação e limpe os dados do app, e também diminui as chances do serviço ser terminado pelo Android. Não oferece nenhuma permissão adicional. Para ativar, vá para: Configurações do Dispositivo > Segurança e Privacidade > Mais Configurações de Segurança > Apps do Administrador do Aparelho, e ative o The Door Seal.</string>
+    <string name="checklist_item_notifications">Notificações</string>
+    <string name="checklist_item_notifications_desc">Permite ao app avisar sobre o tempo restante para limites de uso diário em outros aplicativos, e também para exibir mensagens de bloqueio personalizadas.</string>
+    <string name="checklist_section_system">Sistema</string>
+    <string name="checklist_item_usb_debug">Desativar Depuração USB</string>
+    <string name="checklist_item_usb_debug_desc">Apenas para usuários avançados. Impede execução de comandos externos via USB. Também é recomendada desativar a depuração sem fio, e ligar o Bloqueador Automático (Configurações do Dispositivo > Segurança e Privacidade).</string>
+    <string name="checklist_item_ext_install">Desativar Instalação de Apps Desconhecidos</string>
+    <string name="checklist_item_ext_install_desc">Impede sobrescrita do The Door ou de suas configurações por outros aplicativos, e impede a instalação de possíveis apps que contornam proteções.</string>
+    <string name="checklist_section_browser">Navegadores e Extensões</string>
+    <string name="checklist_item_chrome">Remover Chrome</string>
+    <string name="checklist_item_chrome_desc">Remover/desativar outros navegadores (como Chrome e Samsung Internet) que podem burlar bloqueios, deixando apenas o Firefox instalado.</string>
+    <string name="checklist_item_firefox">Instalaar Firefox</string>
+    <string name="checklist_item_firefox_desc">Navegador exclusivo do sistema devido à compatibilidadee com extensões que constituem parte dos bloqueios.</string>
+    <string name="checklist_item_ublock">Instalar uBlock Origin</string>
+    <string name="checklist_item_ublock_desc">Extensão de bloqueio de anúncios que pode ser obtida na loja oficial de extensões do Firefox.</string>
+    <string name="checklist_item_blocknsfw">Instalar BlockNSFW</string>
+    <string name="checklist_item_blocknsfw_desc">Extensão de bloqueio inteligente de conteúdo adultoque pode ser obtida na loja oficial de extensões do Firefox. Deve ser configurada no Modo Estrito + ping Cloudflare Family + PIN aleatório.</string>
+    <string name="checklist_section_dns_adult">Bloqueios de DNS</string>
+    <string name="checklist_item_search_blocks">Bloquear domínios de busca</string>
+    <string name="checklist_item_search_blocks_desc">Bloqueie no RethinkDNS: google.com, startpage.com, bing.com, etc.</string>
+    <string name="checklist_item_safe_default">Usar Safe Startpage</string>
+    <string name="checklist_item_safe_default_desc">Use o safe.startpage.com como único motor de busca permitido.</string>
+    <string name="checklist_section_rethink">RethinkDNS</string>
+    <string name="checklist_item_rethink_installed">Instalar RethinkDNS</string>
+    <string name="checklist_item_rethink_installed_desc">Aplicativo base para controle de conteúdos em nível de rede.</string>
+    <string name="checklist_item_rethink_configured">Configurar RethinkDNS</string>
+    <string name="checklist_item_rethink_configured_desc">Configurar DoH Cloudflare Family (ou CleanBrowsing Family, que é mais agressivo nas proteções e não funciona com startpage) e configurar firewall.</string>
+    <string name="checklist_section_social">Redes sociais e outros apps</string>
+    <string name="checklist_item_time_limits">Definir Limites de Tempo</string>
+    <string name="checklist_item_time_limits_desc">Configurar limites máximos diário, janelas de bloqueio, e número de vezes que um app pode ser aberto.</string>
+    <string name="checklist_item_social_dns">Bloquear Domínios no DNS</string>
+    <string name="checklist_item_social_dns_desc">Adicione domínios de apostas, redes sociais ou outros no firewall do RethinkDNS. Não será possível usar estes sites e serviços.</string>
+    <string name="checklist_btn_finalizar">Finalizar</string>
+    <string name="checklist_icon_done">Feito</string>
+    <string name="btn_instalar">Instalar</string>
+
+    <!-- Lock Choice -->
+    <string name="lock_choice_title">Proteger Configurações</string>
+    <string name="lock_choice_subtitle">Escolha como deseja proteger as configurações do The Door. A depender das proteções que você escolheu anteriormente, os únicos métodos que permitem desativar o aplicativo serão o PIN de terceiros (definido abaixo), ou a Restauração para Configurações de Fábrica do Android (que apaga todos os dados do dispositivo). Lembre-se sempre de ter um Backup do seu dispositivo.</string>
+    <string name="lock_choice_pin_title">Configuração Protegida com PIN de Terceiros</string>
+    <string name="lock_choice_pin_subtitle">Um amigo ou familiar define um PIN de 6 dígitos, que você nunca deve ter acesso. Esse PIN será necessário para acessar as configurações do The Door.</string>
+    <string name="lock_choice_zero_title">Modelo Zero Trust</string>
+    <string name="lock_choice_zero_subtitle">Uma vez configurado, o aplicativo não poderá ter suas configurações alteradas. Atenção! A depender de como vocẽ configurou o The Door, a reversão de qualquer decisão pode exigir uma Restauração para Configurações de Fábrica.</string>
+
+    <!-- PIN Setup -->
+    <string name="pin_title">Definir PIN de Terceiros</string>
+    <string name="pin_desc">Passe o telefone para uma outra pessoa de confiança. Ela definirá um PIN de 6 dígitos que você não poderá saber.</string>
+    <string name="pin_input_label">Digite o PIN (6 dígitos)</string>
+    <string name="pin_confirm_label">Confirme o PIN (6 dígitos)</string>
+    <string name="pin_error_digits">O PIN deve ter exatamente 6 dígitos.</string>
+    <string name="pin_error_mismatch">Os PINs digitados não são iguais.</string>
+    <string name="pin_keep_current">Manter PIN atual</string>
+
+    <!-- Zero Trust -->
+    <string name="zero_trust_title">Modelo Zero Trust</string>
+    <string name="zero_trust_warning1_title">O que isto significa?</string>
+    <string name="zero_trust_warning1_text">Você não poderá alterar as configurações do The Door, limites de uso, bloqueios, etc. O botão de configurações será removido.</string>
+    <string name="zero_trust_warning2_title">Como remover o The Door ou suas proteções?</string>
+    <string name="zero_trust_warning2_text">Uma vez ativado, o único meio de contornar as proteções do The Door pode ser com uma Restauração para Configurações de Fábrica, que apagará todos os dados do seu dispositivo. Lembre-se de fazer Backup dos seus dados.</string>
+    <string name="zero_trust_warning3_title">E se eu não configurei tudo?</string>
+    <string name="zero_trust_warning3_text">Proteções não configuradas podem permitir contornos em bloqueios, limites e restrições. Confirme que tudo foi feito como você gostaria antes de finalizar e ativar o The Door.</string>
+    <string name="zero_trust_checkbox">Estou ciente de que reverter esta ação pode exigir uma Restauração para Configurações de Fábrica, que apaga todos os meus dados.</string>
+    <string name="zero_trust_btn_activate">Ativar</string>
+
+    <!-- Main Screen -->
+    <string name="main_zero_trust_title">Modo Zero Trust ativo.</string>
+    <string name="main_zero_trust_body">As configurações não podem ser alteradas pelo aplicativo. A reversão pode exigir uma  Restauração para Configurações de Fábrica.</string>
+    <string name="main_btn_settings">Configurações</string>
+    <string name="main_time_saved_title">Tempo Recuperado</string>
+    <string name="main_time_saved_today">Hoje: %s</string>
+    <string name="main_time_saved_week">Esta semana: %s</string>
+    <string name="main_time_saved_alltime">Desde a instalação: %s</string>
+
+    <!-- PIN Dialog (MainActivity) -->
+    <string name="pin_dialog_title">Digite o PIN</string>
+    <string name="pin_dialog_subtitle">Digite o PIN de terceiros de 6 dígitos definido durante a configuração.</string>
+    <string name="pin_dialog_label">PIN</string>
+    <string name="pin_dialog_error">PIN incorreto. Tente novamente.</string>
+    <string name="pin_dialog_btn_unlock">Desbloquear</string>
+    <string name="pin_dialog_btn_cancel">Cancelar</string>
+
+    <!-- Limit warning notifications -->
+    <string name="limit_warning_title">The Door - %s</string>
+    <string name="limit_warning_15min">Menos de 15 minutos restantes para %s</string>
+    <string name="limit_warning_5min">Menos de 5 minutos restantes para %s</string>
+    <string name="limit_warning_1min">Menos de 1 minuto restante para %s</string>
+
+    <!-- Admin Receiver -->
+    <string name="admin_sealed_toast">The Door: Sealed</string>
+    <string name="admin_disable_warning">Desativar o The Door Seal enfraquecerá a proteção no nível do sistema.</string>
+    <string name="admin_unsealed_toast">The Door: Unsealed</string>
+</resources>
