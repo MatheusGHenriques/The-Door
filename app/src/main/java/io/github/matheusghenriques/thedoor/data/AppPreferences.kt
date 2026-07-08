@@ -149,6 +149,7 @@ class AppPreferences(private val context: Context) {
             put("blockFirefoxSettings", config.blockFirefoxSettings)
             put("blockFirefoxUblockOrigin", config.blockFirefoxUblockOrigin)
             put("blockFirefoxBlockNSFW", config.blockFirefoxBlockNSFW)
+            put("blockSecureFolderAddApps", config.blockSecureFolderAddApps)
         }
         return obj.toString()
     }
@@ -170,6 +171,7 @@ class AppPreferences(private val context: Context) {
             blockFirefoxSettings = obj.optBoolean("blockFirefoxSettings", false),
             blockFirefoxUblockOrigin = obj.optBoolean("blockFirefoxUblockOrigin", false),
             blockFirefoxBlockNSFW = obj.optBoolean("blockFirefoxBlockNSFW", false),
+            blockSecureFolderAddApps = obj.optBoolean("blockSecureFolderAddApps", false),
         )
     }
 }

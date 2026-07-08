@@ -11,6 +11,7 @@ import android.content.IntentFilter
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.accessibility.AccessibilityEvent
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
@@ -53,6 +54,7 @@ class TheDoorAccessibilityService : AccessibilityService() {
         private val BLOCKED_RETHINK = listOf("rethink")
         private val BLOCKED_LANGUAGE = listOf("language", "idioma")
         private val BLOCKED_ADMIN = listOf("admin", "administrador")
+        private const val BLOCKED_ADD_APPS_SECURE_FOLDER = "AddAppsActivity"
     }
 
     private val userBlockedApps = ConcurrentHashMap<String, Boolean>()
@@ -296,6 +298,8 @@ class TheDoorAccessibilityService : AccessibilityService() {
 
         val packageName = event.packageName?.toString() ?: return
 
+        Log.d("DoorBug", "event type=${event.eventType} pkg=$packageName cls=${event.className} text=\"${event.text.joinToString(" ")}\" contentDesc=\"${event.contentDescription}\"")
+
         if (event.eventType == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED) {
             val contentDesc = event.contentDescription?.toString()?.lowercase() ?: ""
             if (protectionConfig.get().blockPowerMenu && packageName == PackageConstants.SYSTEM_UI && contentDesc in setOf(
@@ -307,10 +311,10 @@ class TheDoorAccessibilityService : AccessibilityService() {
             }
         }
 
+        val className = event.className?.toString() ?: ""
         if (packageName == PackageConstants.SETTINGS) {
             val cfg = protectionConfig.get()
             val eventText = event.text.joinToString(" ").lowercase()
-            val className = event.className?.toString() ?: ""
             val blockedKeywords = buildList {
                 if (cfg.blockAccessibilitySettings) addAll(BLOCKED_ACCESSIBILITY)
                 if (cfg.blockDeveloperOptions) addAll(BLOCKED_DEV_OPTIONS)
@@ -333,6 +337,11 @@ class TheDoorAccessibilityService : AccessibilityService() {
                 triggerBlock()
                 return
             }
+        }
+
+        if(packageName == PackageConstants.SECURE_FOLDER && protectionConfig.get().blockSecureFolderAddApps && className.contains(BLOCKED_ADD_APPS_SECURE_FOLDER)){
+            triggerBlock()
+            return
         }
 
         val isNewApp = lastActiveApp != packageName

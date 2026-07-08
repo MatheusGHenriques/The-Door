@@ -381,6 +381,7 @@ private fun OnboardingChecklistPage(viewModel: OnboardingViewModel) {
     var timeLimitsDone by remember { mutableStateOf(false) }
     var gradualDone by remember { mutableStateOf(false) }
     val socialDnsDone = remember { mutableStateOf(false) }
+    var bankingIsolationDone by remember { mutableStateOf(false) }
 
     val adultOrGambling = viewModel.blockAdultContent || viewModel.blockGambling
     val dnsBadge = if (adultOrGambling) stringResource(R.string.onboarding_badge_required)
@@ -475,6 +476,20 @@ private fun OnboardingChecklistPage(viewModel: OnboardingViewModel) {
                 .weight(1f)
                 .verticalScroll(rememberScrollState())
         ) {
+            ChecklistSectionHeader(
+                title = stringResource(R.string.guide_section_banking),
+                badge = stringResource(R.string.onboarding_badge_required),
+                isRequired = true
+            )
+            ManualItem(
+                isDone = bankingIsolationDone,
+                onToggle = { bankingIsolationDone = it },
+                title = stringResource(R.string.onboarding_banking_warning),
+                description = stringResource(R.string.onboarding_banking_warning_desc),
+            )
+
+            Spacer(Modifier.height(16.dp))
+
             if (adultOrGambling) {
                 ChecklistSectionHeader(
                     title = stringResource(R.string.guide_section_dns),
@@ -601,9 +616,7 @@ private fun OnboardingChecklistPage(viewModel: OnboardingViewModel) {
             }
 
             TimedButton(
-                text = stringResource(R.string.btn_proximo),
-                onClick = { viewModel.nextPage() }
-            )
+                text = stringResource(R.string.btn_proximo), onClick = { viewModel.nextPage() })
         }
 
         Spacer(Modifier.height(40.dp))
@@ -831,11 +844,9 @@ private fun FinalPage(
     val context = LocalContext.current
     var permissionGranted by remember {
         mutableStateOf(
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
-                ContextCompat.checkSelfPermission(
-                    context,
-                    Manifest.permission.POST_NOTIFICATIONS
-                ) == PackageManager.PERMISSION_GRANTED
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) ContextCompat.checkSelfPermission(
+                context, Manifest.permission.POST_NOTIFICATIONS
+            ) == PackageManager.PERMISSION_GRANTED
             else true
         )
     }

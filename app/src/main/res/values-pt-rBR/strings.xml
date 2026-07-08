@@ -42,10 +42,13 @@
     <string name="guide_section_browser">Configuração do Navegador</string>
     <string name="guide_section_gambling">Sites de Apostas</string>
     <string name="guide_section_limits">Limites de uso de Apps</string>
+    <string name="guide_section_banking">Apps Bancários</string>
 
     <!-- Onboarding Checklist -->
     <string name="onboarding_badge_required">Obrigatório</string>
     <string name="onboarding_badge_additional">Adicional</string>
+    <string name="onboarding_banking_warning">Isole Apps Bancários</string>
+    <string name="onboarding_banking_warning_desc">Alguns aplicativos bancários, como o Inter, podem detectar o The Door como um aplicativo de risco e impedir o acesso à sua conta. Se isso acontecer, mova o app do banco para uma Pasta Segura (Samsung) ou para um Espaço Privado/Perfil de Trabalho (outras marcas). Isso isola o aplicativo do banco do restante do sistema.</string>
     <string name="onboarding_dns_filter">Configurar Cloudflare Family como DNS</string>
     <string name="onboarding_dns_filter_desc">Clique em DNS > Outros DNS > DoH > Cloudflare Family (ou CleanBrowsingFamily) para bloquear em nível de rede.</string>
     <string name="onboarding_vpn_activate">Ativar o RethinkDNS</string>
@@ -162,6 +165,8 @@
     <string name="protection_item_app_info_desc">Bloqueia a tela de informações de todos aplicativos, impedindo desinstalação, finalização do serviço do app, limpeza de dados do app e a desativação da administração do dispositivo.</string>
     <string name="protection_item_language">Idioma</string>
     <string name="protection_item_language_desc">Previne alterações de idioma no sistema, que podem permitir burlar as proteções do The Door.</string>
+    <string name="protection_item_secure_folder">Pasta Segura</string>
+    <string name="protection_item_secure_folder_desc">Bloqueia a adição de novos aplicativos à Pasta Segura da Samsung.</string>
     <string name="protection_item_power_menu">Modo de segurança</string>
     <string name="protection_item_power_menu_desc">Desativa o reinício em modo de segurança, que permite a desinstalação do The Door. O modo de segurança é uma funcionalidade do Android que pode ser útil em casos específicos.</string>
     <string name="protection_item_vpn">Configurações de VPN</string>

@@ -113,6 +113,13 @@ fun ProtectionConfigScreen(
                 title = stringResource(R.string.protection_item_language),
                 subtitle = stringResource(R.string.protection_item_language_desc)
             )
+                Spacer(Modifier.height(8.dp))
+                ProtectionItem(
+                    checked = config.blockSecureFolderAddApps,
+                    onCheckedChange = { config = config.copy(blockSecureFolderAddApps = it) },
+                    title = stringResource(R.string.protection_item_secure_folder),
+                    subtitle = stringResource(R.string.protection_item_secure_folder_desc)
+                )
 
             Spacer(Modifier.height(16.dp))
             HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
@@ -169,15 +176,14 @@ fun ProtectionConfigScreen(
                     title = stringResource(R.string.protection_item_firefox_blocknsfw),
                     subtitle = stringResource(R.string.protection_item_firefox_blocknsfw_desc)
                 )
+                Spacer(Modifier.height(8.dp))
             }
-            Spacer(Modifier.height(8.dp))
             ProtectionItem(
                 checked = config.blockUninstallRethink,
                 onCheckedChange = { config = config.copy(blockUninstallRethink = it) },
                 title = stringResource(R.string.protection_item_uninstall_rethink),
                 subtitle = stringResource(R.string.protection_item_uninstall_rethink_desc)
             )
-
             Spacer(Modifier.height(24.dp))
         }
 

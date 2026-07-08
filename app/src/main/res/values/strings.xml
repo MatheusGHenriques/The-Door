@@ -43,10 +43,14 @@
     <string name="guide_section_browser">Browser Configuration</string>
     <string name="guide_section_gambling">Betting Websites</string>
     <string name="guide_section_limits">App Usage Limits</string>
+    <string name="guide_section_banking">Banking Apps</string>
 
     <!-- Onboarding Checklist -->
     <string name="onboarding_badge_required">Required</string>
     <string name="onboarding_badge_additional">Additional</string>
+
+    <string name="onboarding_banking_warning">Isolate Banking Apps</string>
+    <string name="onboarding_banking_warning_desc">Some banking apps, such as Inter, may flag The Door as a risky app and block access to your account. If this happens, move the banking app to a Secure Folder (Samsung) or a Private Space/Work Profile (other brands). This isolates the banking app from the rest of the system.</string>
 
     <string name="onboarding_dns_filter">Configure Cloudflare Family as DNS</string>
     <string name="onboarding_dns_filter_desc">Tap DNS > Other DNS > DoH > Cloudflare Family (or CleanBrowsing Family) to block content at the network level.</string>
@@ -197,6 +201,9 @@
 
     <string name="protection_item_language">Language</string>
     <string name="protection_item_language_desc">Prevents changes to the system language, which could be used to bypass The Door protections.</string>
+
+    <string name="protection_item_secure_folder">Secure Folder</string>
+    <string name="protection_item_secure_folder_desc">Blocks adding new apps to Samsung Secure Folder.</string>
 
     <string name="protection_item_power_menu">Safe Mode</string>
     <string name="protection_item_power_menu_desc">Disables rebooting into Safe Mode, which could allow The Door to be uninstalled. Safe Mode is an Android feature that may still be useful in specific situations.</string>

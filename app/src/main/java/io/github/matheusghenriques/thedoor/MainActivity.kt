@@ -84,7 +84,8 @@ private val ProtectionConfigSaver = listSaver<ProtectionConfig?, Boolean>(
             config.blockUninstallRethink,
             config.blockFirefoxSettings,
             config.blockFirefoxUblockOrigin,
-            config.blockFirefoxBlockNSFW
+            config.blockFirefoxBlockNSFW,
+            config.blockSecureFolderAddApps
         ) else emptyList()
     },
     restore = { list ->
@@ -96,7 +97,8 @@ private val ProtectionConfigSaver = listSaver<ProtectionConfig?, Boolean>(
             blockVpn = list[6], blockPrivateDns = list[7],
             blockUninstallFirefox = list[8], blockUninstallRethink = list[9],
             blockFirefoxSettings = list[10], blockFirefoxUblockOrigin = list[11],
-            blockFirefoxBlockNSFW = list[12]
+            blockFirefoxBlockNSFW = list[12],
+            blockSecureFolderAddApps = list[13]
         )
     }
 )
