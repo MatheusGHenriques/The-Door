@@ -44,7 +44,8 @@ class TheDoorAccessibilityService : AccessibilityService() {
         private const val NOTIFICATION_CHANNEL_ID = "limit_warnings"
         private const val NOTIFICATION_CHANNEL_NAME = "Limit Warnings"
         private const val NOTIFICATION_ID_BASE = 1000
-        private val BLOCKED_ACCESSIBILITY = listOf("accessibility", "acessibilidade")
+        private val BLOCKED_ACCESSIBILITY =
+            listOf("accessibility", "acessibilidade", "aplicativos instalados", "installed apps")
         private val BLOCKED_DEV_OPTIONS =
             listOf("developer options", "opções do desenvolvedor", "opções de desenvolvedor")
         private val BLOCKED_VPN =
@@ -298,7 +299,12 @@ class TheDoorAccessibilityService : AccessibilityService() {
 
         val packageName = event.packageName?.toString() ?: return
 
-        Log.d("DoorBug", "event type=${event.eventType} pkg=$packageName cls=${event.className} text=\"${event.text.joinToString(" ")}\" contentDesc=\"${event.contentDescription}\"")
+        Log.d(
+            "DoorBug",
+            "event type=${event.eventType} pkg=$packageName cls=${event.className} text=\"${
+                event.text.joinToString(" ")
+            }\" contentDesc=\"${event.contentDescription}\""
+        )
 
         if (event.eventType == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED) {
             val contentDesc = event.contentDescription?.toString()?.lowercase() ?: ""
@@ -339,7 +345,10 @@ class TheDoorAccessibilityService : AccessibilityService() {
             }
         }
 
-        if(packageName == PackageConstants.SECURE_FOLDER && protectionConfig.get().blockSecureFolderAddApps && className.contains(BLOCKED_ADD_APPS_SECURE_FOLDER)){
+        if (packageName == PackageConstants.SECURE_FOLDER && protectionConfig.get().blockSecureFolderAddApps && className.contains(
+                BLOCKED_ADD_APPS_SECURE_FOLDER
+            )
+        ) {
             triggerBlock()
             return
         }
