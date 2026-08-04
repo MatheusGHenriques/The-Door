@@ -57,8 +57,10 @@ class TheDoorAccessibilityService : AccessibilityService() {
         private val BLOCKED_ADMIN = listOf("admin", "administrador")
         private val BLOCKED_ADD_APPS_SECURE_FOLDER =
             listOf("AddAppsActivity", "add apps", "adicionar aplicativos")
-        private val BLOCKED_UNKNOWN_INSTALL = listOf("install unknown apps", "instalar apps desconhecidos")
-        private val BLOCKED_AUTO_BLOCKER = listOf("turn off auto blocker", "desativar o bloqueador automático")
+        private val BLOCKED_UNKNOWN_INSTALL =
+            listOf("install unknown apps", "instalar apps desconhecidos")
+        private val BLOCKED_AUTO_BLOCKER =
+            listOf("turn off auto blocker", "desativar o bloqueador automático")
 
     }
 
@@ -249,7 +251,6 @@ class TheDoorAccessibilityService : AccessibilityService() {
 
     private fun triggerBlock() {
         performGlobalAction(GLOBAL_ACTION_BACK)
-        performGlobalAction(GLOBAL_ACTION_HOME)
 
         handler.postDelayed({
             val config = cachedRedirectConfig
@@ -277,7 +278,7 @@ class TheDoorAccessibilityService : AccessibilityService() {
                         startActivity(intent)
                     }
                 }
-            }
+            } else performGlobalAction(GLOBAL_ACTION_HOME)
 
             if (config.toastEnabled && config.toastMessage.isNotBlank()) {
                 Toast.makeText(applicationContext, config.toastMessage, Toast.LENGTH_SHORT).show()
@@ -360,7 +361,11 @@ class TheDoorAccessibilityService : AccessibilityService() {
         }
 
         val eventText = event.text.joinToString(" ").lowercase()
-        if (packageName == PackageConstants.SECURE_FOLDER && protectionConfig.get().blockSecureFolderAddApps && BLOCKED_ADD_APPS_SECURE_FOLDER.any { className.contains(it) || eventText.contains(it) }
+        if (packageName == PackageConstants.SECURE_FOLDER && protectionConfig.get().blockSecureFolderAddApps && BLOCKED_ADD_APPS_SECURE_FOLDER.any {
+                className.contains(
+                    it
+                ) || eventText.contains(it)
+            }
         ) {
             triggerBlock()
             return
