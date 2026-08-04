@@ -205,6 +205,12 @@
     <string name="protection_item_secure_folder">Secure Folder</string>
     <string name="protection_item_secure_folder_desc">Blocks adding new apps to Samsung Secure Folder.</string>
 
+    <string name="protection_item_unknown_install">Unknown Apps Installation</string>
+    <string name="protection_item_unknown_install_desc">Blocks the settings screen that allows installing apps from unknown sources, preventing apps that could bypass protections. Warning: when enabled, updating The Door itself may not be possible.</string>
+
+    <string name="protection_item_auto_blocker">Auto Blocker</string>
+    <string name="protection_item_auto_blocker_desc">Prevents Auto Blocker from being turned off, keeping protections against threats and suspicious activity active.</string>
+
     <string name="protection_item_power_menu">Safe Mode</string>
     <string name="protection_item_power_menu_desc">Disables rebooting into Safe Mode, which could allow The Door to be uninstalled. Safe Mode is an Android feature that may still be useful in specific situations.</string>
 

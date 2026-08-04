@@ -150,6 +150,8 @@ class AppPreferences(private val context: Context) {
             put("blockFirefoxUblockOrigin", config.blockFirefoxUblockOrigin)
             put("blockFirefoxBlockNSFW", config.blockFirefoxBlockNSFW)
             put("blockSecureFolderAddApps", config.blockSecureFolderAddApps)
+            put("blockInstallUnknownApps", config.blockInstallUnknownApps)
+            put("blockAutoBlocker", config.blockAutoBlocker)
         }
         return obj.toString()
     }
@@ -172,6 +174,8 @@ class AppPreferences(private val context: Context) {
             blockFirefoxUblockOrigin = obj.optBoolean("blockFirefoxUblockOrigin", false),
             blockFirefoxBlockNSFW = obj.optBoolean("blockFirefoxBlockNSFW", false),
             blockSecureFolderAddApps = obj.optBoolean("blockSecureFolderAddApps", false),
+            blockInstallUnknownApps = obj.optBoolean("blockInstallUnknownApps", false),
+            blockAutoBlocker = obj.optBoolean("blockAutoBlocker", false),
         )
     }
 }

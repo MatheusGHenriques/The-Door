@@ -85,7 +85,9 @@ private val ProtectionConfigSaver = listSaver<ProtectionConfig?, Boolean>(
             config.blockFirefoxSettings,
             config.blockFirefoxUblockOrigin,
             config.blockFirefoxBlockNSFW,
-            config.blockSecureFolderAddApps
+            config.blockSecureFolderAddApps,
+            config.blockInstallUnknownApps,
+            config.blockAutoBlocker
         ) else emptyList()
     },
     restore = { list ->
@@ -98,7 +100,9 @@ private val ProtectionConfigSaver = listSaver<ProtectionConfig?, Boolean>(
             blockUninstallFirefox = list[8], blockUninstallRethink = list[9],
             blockFirefoxSettings = list[10], blockFirefoxUblockOrigin = list[11],
             blockFirefoxBlockNSFW = list[12],
-            blockSecureFolderAddApps = list[13]
+            blockSecureFolderAddApps = list[13],
+            blockInstallUnknownApps = list[14],
+            blockAutoBlocker = list[15]
         )
     }
 )

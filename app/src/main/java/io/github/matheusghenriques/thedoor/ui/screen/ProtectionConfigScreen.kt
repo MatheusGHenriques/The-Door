@@ -148,6 +148,20 @@ fun ProtectionConfigScreen(
                 subtitle = stringResource(R.string.protection_item_private_dns_desc)
             )
             Spacer(Modifier.height(8.dp))
+            ProtectionItem(
+                checked = config.blockInstallUnknownApps,
+                onCheckedChange = { config = config.copy(blockInstallUnknownApps = it) },
+                title = stringResource(R.string.protection_item_unknown_install),
+                subtitle = stringResource(R.string.protection_item_unknown_install_desc)
+            )
+            Spacer(Modifier.height(8.dp))
+            ProtectionItem(
+                checked = config.blockAutoBlocker,
+                onCheckedChange = { config = config.copy(blockAutoBlocker = it) },
+                title = stringResource(R.string.protection_item_auto_blocker),
+                subtitle = stringResource(R.string.protection_item_auto_blocker_desc)
+            )
+            Spacer(Modifier.height(8.dp))
             if (showFirefoxTiles) {
                 ProtectionItem(
                     checked = config.blockUninstallFirefox,

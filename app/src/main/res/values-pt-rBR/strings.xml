@@ -167,6 +167,10 @@
     <string name="protection_item_language_desc">Previne alterações de idioma no sistema, que podem permitir burlar as proteções do The Door.</string>
     <string name="protection_item_secure_folder">Pasta Segura</string>
     <string name="protection_item_secure_folder_desc">Bloqueia a adição de novos aplicativos à Pasta Segura da Samsung.</string>
+    <string name="protection_item_unknown_install">Instalação de Apps Desconhecidos</string>
+    <string name="protection_item_unknown_install_desc">Bloqueia a tela de configurações que permite instalar aplicativos de fontes desconhecidas, impedindo apps que possam burlar as proteções. Atenção: quando ativado, pode não ser possível atualizar o próprio The Door.</string>
+    <string name="protection_item_auto_blocker">Bloqueador automático</string>
+    <string name="protection_item_auto_blocker_desc">Impede a desativação do Bloqueador automático, mantendo ativas as proteções contra ameaças e atividades suspeitas.</string>
     <string name="protection_item_power_menu">Modo de segurança</string>
     <string name="protection_item_power_menu_desc">Desativa o reinício em modo de segurança, que permite a desinstalação do The Door. O modo de segurança é uma funcionalidade do Android que pode ser útil em casos específicos.</string>
     <string name="protection_item_vpn">Configurações de VPN</string>

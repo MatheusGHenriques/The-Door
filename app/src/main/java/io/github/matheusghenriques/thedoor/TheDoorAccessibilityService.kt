@@ -55,7 +55,11 @@ class TheDoorAccessibilityService : AccessibilityService() {
         private val BLOCKED_RETHINK = listOf("rethink")
         private val BLOCKED_LANGUAGE = listOf("language", "idioma")
         private val BLOCKED_ADMIN = listOf("admin", "administrador")
-        private const val BLOCKED_ADD_APPS_SECURE_FOLDER = "AddAppsActivity"
+        private val BLOCKED_ADD_APPS_SECURE_FOLDER =
+            listOf("AddAppsActivity", "add apps", "adicionar aplicativos")
+        private val BLOCKED_UNKNOWN_INSTALL = listOf("install unknown apps", "instalar apps desconhecidos")
+        private val BLOCKED_AUTO_BLOCKER = listOf("turn off auto blocker", "desativar o bloqueador automático")
+
     }
 
     private val userBlockedApps = ConcurrentHashMap<String, Boolean>()
@@ -330,6 +334,7 @@ class TheDoorAccessibilityService : AccessibilityService() {
                 if (cfg.blockUninstallRethink) addAll(BLOCKED_RETHINK)
                 if (cfg.blockLanguageChanges) addAll(BLOCKED_LANGUAGE)
                 if (cfg.blockAppInfo) addAll(BLOCKED_ADMIN)
+                if (cfg.blockInstallUnknownApps) addAll(BLOCKED_UNKNOWN_INSTALL)
             }
             val isAppInfoScreen =
                 cfg.blockAppInfo && (className.contains("AppInfoDashboardActivity") || className.contains(
@@ -345,9 +350,17 @@ class TheDoorAccessibilityService : AccessibilityService() {
             }
         }
 
-        if (packageName == PackageConstants.SECURE_FOLDER && protectionConfig.get().blockSecureFolderAddApps && className.contains(
-                BLOCKED_ADD_APPS_SECURE_FOLDER
-            )
+        if (packageName == PackageConstants.SAMSUNG_BIOMETRICS_SETTINGS) {
+            val cfg = protectionConfig.get()
+            val eventText = event.text.joinToString(" ").lowercase()
+            if (cfg.blockAutoBlocker && BLOCKED_AUTO_BLOCKER.any { eventText.contains(it) }) {
+                triggerBlock()
+                return
+            }
+        }
+
+        val eventText = event.text.joinToString(" ").lowercase()
+        if (packageName == PackageConstants.SECURE_FOLDER && protectionConfig.get().blockSecureFolderAddApps && BLOCKED_ADD_APPS_SECURE_FOLDER.any { className.contains(it) || eventText.contains(it) }
         ) {
             triggerBlock()
             return

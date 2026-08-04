@@ -9,4 +9,5 @@ object PackageConstants {
     const val PACKAGE_INSTALLER_GOOGLE = "com.google.android.packageinstaller"
     const val PACKAGE_INSTALLER_AOSP = "com.android.packageinstaller"
     const val SECURE_FOLDER = "com.samsung.knox.securefolder"
+    const val SAMSUNG_BIOMETRICS_SETTINGS = "com.samsung.android.biometrics.app.setting"
 }

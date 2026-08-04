@@ -15,4 +15,6 @@ data class ProtectionConfig(
     val blockFirefoxUblockOrigin: Boolean = false,
     val blockFirefoxBlockNSFW: Boolean = false,
     val blockSecureFolderAddApps: Boolean = false,
+    val blockInstallUnknownApps: Boolean = false,
+    val blockAutoBlocker: Boolean = false,
 )
