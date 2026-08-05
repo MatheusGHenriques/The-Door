@@ -7,7 +7,7 @@ body = """
 {% for group, commits in commits | group_by(attribute="group") %}
 ### {{ group }}
 {% for commit in commits | sort(attribute="message") %}
-- {{ commit.message | upper_first }} ([{{ commit.id | truncate(length=7, end="") }}](https://github.com/{{ env.GITHUB_REPO }}/commit/{{ commit.id }}))
+- {{ commit.message | upper_first }} ([{{ commit.id | truncate(length=7, end="") }}](https://github.com/MatheusGHenriques/The-Door/commit/{{ commit.id }}))
 {%- endfor %}
 {% endfor %}
 """
