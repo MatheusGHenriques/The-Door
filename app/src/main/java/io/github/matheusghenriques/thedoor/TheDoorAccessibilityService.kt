@@ -4,7 +4,9 @@ import android.accessibilityservice.AccessibilityService
 import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.admin.DevicePolicyManager
 import android.content.BroadcastReceiver
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
@@ -323,6 +325,18 @@ class TheDoorAccessibilityService : AccessibilityService() {
         }
 
         val className = event.className?.toString() ?: ""
+
+        if (protectionConfig.get().blockPowerMenu && packageName == PackageConstants.SYSTEM_UI && className.contains(
+                "SamsungGlobalActionsDialog"
+            )
+        ) {
+            val dialogText = event.text.joinToString(" ").lowercase()
+            if (dialogText.contains("side button settings") || dialogText.contains("configurações do botão lateral")) {
+                lockScreenViaAdmin()
+                return
+            }
+        }
+
         if (packageName == PackageConstants.SETTINGS) {
             val cfg = protectionConfig.get()
             val eventText = event.text.joinToString(" ").lowercase()
@@ -365,8 +379,7 @@ class TheDoorAccessibilityService : AccessibilityService() {
                 className.contains(
                     it
                 ) || eventText.contains(it)
-            }
-        ) {
+            }) {
             triggerBlock()
             return
         }
@@ -443,6 +456,29 @@ class TheDoorAccessibilityService : AccessibilityService() {
                 triggerBlock()
                 return
             }
+        }
+    }
+
+    private var lastSideButtonLockAt = 0L
+
+    private fun lockScreenViaAdmin() {
+        val now = android.os.SystemClock.uptimeMillis()
+        if (now - lastSideButtonLockAt < 3000L) {
+            Log.d("DoorBug", "SideBtn lock skipped by debounce")
+            return
+        }
+        lastSideButtonLockAt = now
+        try {
+            val dpm = getSystemService(Context.DEVICE_POLICY_SERVICE) as DevicePolicyManager
+            val admin = ComponentName(this, TheDoorAdminReceiver::class.java)
+            val active = dpm.isAdminActive(admin)
+            Log.d("DoorBug", "SideBtn adminActive=$active")
+            if (active) {
+                dpm.lockNow()
+                Log.d("DoorBug", "SideBtn lockNow() called")
+            }
+        } catch (e: Exception) {
+            Log.d("DoorBug", "SideBtn lock failed: ${e::class.java.simpleName} ${e.message}")
         }
     }
 

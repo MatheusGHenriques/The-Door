@@ -16,7 +16,7 @@ android {
 
         versionCode = providers
             .environmentVariable("VERSION_CODE")
-            .orElse("1")
+            .orElse("11")
             .get()
             .toInt()
 
